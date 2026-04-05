@@ -240,6 +240,7 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 14px 30px rgba(33, 136, 255, 0.24);
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .button:hover {
@@ -697,6 +698,69 @@ ul {
     top: 108px;
 }
 
+.contact-forms-grid {
+    align-items: start;
+}
+
+.form-card {
+    height: 100%;
+}
+
+.contact-form {
+    margin-top: 24px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font-size: 0.98rem;
+    outline: none;
+    transition: var(--transition);
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: rgba(77, 163, 255, 0.55);
+    box-shadow: 0 0 0 4px rgba(77, 163, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+}
+
 .legal-section {
     padding: 50px 0 110px;
 }
@@ -775,7 +839,10 @@ ul {
 .dashboard-card,
 .smartflow-box,
 .cta-box,
-.legal-card {
+.legal-card,
+.form-group input,
+.form-group select,
+.form-group textarea {
     transition: var(--transition);
 }
 
@@ -820,7 +887,8 @@ ul {
 @media (max-width: 900px) {
     .grid-3,
     .process-grid,
-    .dashboard-stats {
+    .dashboard-stats,
+    .form-grid {
         grid-template-columns: 1fr;
     }
 
@@ -871,6 +939,10 @@ ul {
     .contact-point-card,
     .legal-card {
         padding: 24px;
+    }
+
+    .form-group-full {
+        grid-column: auto;
     }
 }
 
