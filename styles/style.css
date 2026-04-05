@@ -40,11 +40,6 @@ a {
   text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -108,18 +103,7 @@ img {
 
 .brand {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.brand strong {
-  font-size: 18px;
-  letter-spacing: 0.2px;
-}
-
-.brand span {
-  font-size: 13px;
-  color: var(--muted);
+  align-items: center;
 }
 
 .nav-links {
@@ -165,19 +149,18 @@ img {
 
 .hero-left,
 .hero-right,
-.card,
-.problem-box,
+.info-card,
+.problem-item,
 .service-card,
-.step,
-.audience-card,
-.smartflow-box,
-.contact-card,
-.form-card,
-.info-card {
-  border-radius: var(--radius-xl);
+.step {
   border: 1px solid var(--border);
   background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
   box-shadow: var(--shadow);
+}
+
+.hero-left,
+.hero-right {
+  border-radius: var(--radius-xl);
 }
 
 .hero-left {
@@ -281,15 +264,9 @@ img {
   font-size: 15px;
 }
 
-.problem-box {
-  padding: 34px;
-}
-
 .problem-grid,
 .services-grid,
-.steps,
-.audience-grid,
-.contact-grid {
+.steps {
   display: grid;
   gap: 18px;
 }
@@ -303,25 +280,8 @@ img {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.audience-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.contact-grid {
-  grid-template-columns: 0.9fr 1.1fr;
-  align-items: start;
-  gap: 24px;
-}
-
-.problem-item,
-.smartflow-note,
-.contact-list div {
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.03);
-}
-
 .problem-item {
+  border-radius: var(--radius-md);
   padding: 20px;
 }
 
@@ -348,24 +308,16 @@ img {
 
 .service-card p {
   color: var(--muted);
-  margin: 0 0 18px;
-  font-size: 16px;
-}
-
-.service-card ul {
   margin: 0;
-  padding-left: 18px;
-  color: #e2e2e8;
-}
-
-.service-card li {
-  margin-bottom: 8px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .step {
   border-radius: var(--radius-lg);
   padding: 24px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .step-number {
@@ -378,88 +330,7 @@ img {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.step h3 {
-  margin: 0 0 10px;
-  font-size: 19px;
-}
-
-.step p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.audience-card {
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  text-align: center;
-}
-
-.audience-card h3 {
-  margin: 0 0 10px;
-  font-size: 20px;
-}
-
-.audience-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.smartflow-box {
-  display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 22px;
-  align-items: center;
-  padding: 32px;
-}
-
-.smartflow-box h2 {
-  margin: 14px 0;
-  font-size: clamp(28px, 4vw, 44px);
-}
-
-.smartflow-box p {
-  margin: 0 0 18px;
-  color: var(--muted);
-  font-size: 17px;
-}
-
-.smartflow-note {
-  padding: 22px;
-}
-
-.smartflow-note strong {
-  display: block;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.smartflow-note span {
-  color: var(--muted);
-  font-size: 15px;
-  display: block;
-}
-
-.contact-card,
-.form-card {
-  padding: 28px;
-}
-
-.contact-card h2,
-.form-card h2 {
-  margin: 14px 0;
-  font-size: 30px;
-}
-
-.contact-card p,
-.form-card p {
-  color: var(--muted);
-  font-size: 16px;
-  margin: 0 0 18px;
+  margin: 0 auto 16px;
 }
 
 .contact-list {
@@ -469,69 +340,19 @@ img {
 }
 
 .contact-list div {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
   padding: 15px 16px;
   color: #e7e7ed;
   font-size: 15px;
 }
 
-form {
-  display: grid;
-  gap: 14px;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.03);
-  color: var(--white);
-  padding: 15px 16px;
-  font: inherit;
-  outline: none;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #9d9da7;
-}
-
-textarea {
-  min-height: 130px;
-  resize: vertical;
-}
-
-.footer {
-  margin-top: 30px;
-  padding: 34px 0 50px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.footer-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
 @media (max-width: 980px) {
   .hero-grid,
-  .smartflow-box,
-  .contact-grid,
-  .services-grid,
   .problem-grid,
-  .steps,
-  .audience-grid {
+  .services-grid,
+  .steps {
     grid-template-columns: 1fr;
   }
 
