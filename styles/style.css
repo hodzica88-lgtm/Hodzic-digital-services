@@ -854,6 +854,13 @@ ul {
     background: rgba(255, 255, 255, 0.065);
 }
 
+.hidden-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .legal-section {
     padding: 52px 0 112px;
 }
