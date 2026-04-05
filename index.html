@@ -1,104 +1,91 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hodzic Digital Services</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
+  <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: #ffffff;
-      color: #111111;
-      line-height: 1.5;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
+      color: #111;
       text-align: center;
     }
 
-    .hero-content {
-      max-width: 900px;
+    section {
+      padding: 80px 20px;
     }
 
-    .hero-eyebrow {
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    h1 {
+      font-size: 48px;
       margin-bottom: 20px;
-      opacity: 0.75;
     }
 
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 72px);
-      line-height: 1.05;
-      margin-bottom: 24px;
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
-    .hero p {
+    p {
       max-width: 700px;
-      margin: 0 auto 32px;
+      margin: 0 auto 20px;
       font-size: 18px;
-      color: #333333;
     }
 
-    .hero-buttons {
+    .buttons {
       display: flex;
       justify-content: center;
-      gap: 14px;
+      gap: 15px;
       flex-wrap: wrap;
+      margin-top: 20px;
     }
 
     .btn {
-      display: inline-block;
       padding: 14px 24px;
-      border-radius: 999px;
       text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s ease;
+      border-radius: 30px;
+      font-weight: bold;
     }
 
-    .btn-primary {
-      background: #111111;
-      color: #ffffff;
+    .primary {
+      background: black;
+      color: white;
     }
 
-    .btn-secondary {
-      border: 1px solid #111111;
-      color: #111111;
-      background: transparent;
-    }
-
-    .btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
+    .secondary {
+      border: 1px solid black;
+      color: black;
     }
   </style>
 </head>
+
 <body>
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Hodzic Digital Services</div>
-      <h1>Websites, die Anfragen bringen – nicht nur gut aussehen</h1>
-      <p>
-        Ich helfe lokalen Betrieben, online mehr Anfragen zu bekommen und sorge dafür,
-        dass keine Anfrage verloren geht.
-      </p>
-      <div class="hero-buttons">
-        <a href="#kontakt" class="btn btn-primary">Website anfragen</a>
-        <a href="https://smartflow-automations.de" class="btn btn-secondary">SmartFlow ansehen</a>
-      </div>
+
+  <!-- HERO -->
+  <section>
+    <h1>Websites, die Anfragen bringen – nicht nur gut aussehen</h1>
+    <p>
+      Ich helfe lokalen Betrieben, online mehr Anfragen zu bekommen und sorge dafür,
+      dass keine Anfrage verloren geht.
+    </p>
+
+    <div class="buttons">
+      <a href="#" class="btn primary">Website anfragen</a>
+      <a href="https://smartflow-automations.de" class="btn secondary">SmartFlow ansehen</a>
     </div>
   </section>
+
+  <!-- PROBLEM -->
+  <section style="background:#f5f5f5;">
+    <h2>Viele Betriebe verlieren täglich Anfragen</h2>
+    <p>
+      Oft gehen Anfragen verloren, weil keine klare Website vorhanden ist oder Kunden zu spät eine Antwort bekommen.
+      <br><br>
+      Genau hier setzen wir an – mit einer einfachen Website und einem System, das automatisch auf jede Anfrage reagiert.
+    </p>
+  </section>
+
 </body>
 </html>
