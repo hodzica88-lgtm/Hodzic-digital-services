@@ -1,91 +1,885 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hodzic Digital Services</title>
-
+  <meta
+    name="description"
+    content="Websites für lokale Betriebe – klar, modern und darauf ausgelegt, Anfragen zu bringen und keine Leads zu verlieren."
+  />
   <style>
+    :root {
+      --bg: #0b0b0c;
+      --bg-soft: #121214;
+      --card: #17171a;
+      --line: #2b2b31;
+      --text: #f4f4f5;
+      --muted: #b0b0b8;
+      --accent: #ffffff;
+      --accent-dark: #111111;
+      --max: 1180px;
+      --radius: 20px;
+      --shadow: 0 20px 60px rgba(0,0,0,0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #111;
-      text-align: center;
+      background: linear-gradient(180deg, #0a0a0b 0%, #111114 100%);
+      color: var(--text);
+      line-height: 1.5;
     }
 
-    section {
-      padding: 80px 20px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
+    .section {
+      padding: 88px 0;
     }
 
-    p {
-      max-width: 700px;
-      margin: 0 auto 20px;
-      font-size: 18px;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
     }
 
-    .buttons {
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(11,11,12,0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
       display: flex;
-      justify-content: center;
-      gap: 15px;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
       flex-wrap: wrap;
-      margin-top: 20px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 72px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-left,
+    .hero-right {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-left {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-right {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      min-height: 100%;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.02;
+      margin: 16px 0 20px;
+      letter-spacing: -1.4px;
+    }
+
+    .hero p.lead {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
     }
 
     .btn {
-      padding: 14px 24px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
     }
 
-    .primary {
-      background: black;
-      color: white;
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-dark);
     }
 
-    .secondary {
-      border: 1px solid black;
-      color: black;
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.16);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-points span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .mini-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      margin: 0 0 16px;
+      line-height: 1.08;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .problem-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 26px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .problem-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .problem-item strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .problem-item span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .service-card h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    .service-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .service-list li {
+      color: #dbdbe2;
+      font-size: 15px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .service-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #111;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .audience-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .audience-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .audience-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .smartflow-box {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .smartflow-box h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 4vw, 42px);
+    }
+
+    .smartflow-box p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .smartflow-note {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .smartflow-note strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+
+    .smartflow-note span {
+      color: var(--muted);
+      font-size: 15px;
+      display: block;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-card,
+    .form-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h2,
+    .form-card h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+    }
+
+    .contact-card p,
+    .form-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .contact-list div {
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      color: #e7e7ec;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #9797a1;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .footer {
+      padding: 34px 0 50px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .smartflow-box,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .steps,
+      .audience-grid,
+      .services-grid,
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        letter-spacing: -0.8px;
+      }
+
+      .btn,
+      .nav-cta {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <section>
-    <h1>Websites, die Anfragen bringen – nicht nur gut aussehen</h1>
-    <p>
-      Ich helfe lokalen Betrieben, online mehr Anfragen zu bekommen und sorge dafür,
-      dass keine Anfrage verloren geht.
-    </p>
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a href="#" class="brand">
+        <strong>Hodzic Digital Services</strong>
+        <span>Websites & digitale Systeme für lokale Betriebe</span>
+      </a>
 
-    <div class="buttons">
-      <a href="#" class="btn primary">Website anfragen</a>
-      <a href="https://smartflow-automations.de" class="btn secondary">SmartFlow ansehen</a>
+      <div class="nav-links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#smartflow">SmartFlow</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+
+      <a class="nav-cta" href="#kontakt">Anfrage stellen</a>
     </div>
-  </section>
+  </div>
 
-  <!-- PROBLEM -->
-  <section style="background:#f5f5f5;">
-    <h2>Viele Betriebe verlieren täglich Anfragen</h2>
-    <p>
-      Oft gehen Anfragen verloren, weil keine klare Website vorhanden ist oder Kunden zu spät eine Antwort bekommen.
-      <br><br>
-      Genau hier setzen wir an – mit einer einfachen Website und einem System, das automatisch auf jede Anfrage reagiert.
-    </p>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="badge">Hodzic Digital Services</div>
+          <h1>Websites, die Anfragen bringen – nicht nur gut aussehen</h1>
+          <p class="lead">
+            Ich helfe lokalen Betrieben, online mehr Anfragen zu bekommen und sorge dafür,
+            dass keine Anfrage verloren geht.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary">Website anfragen</a>
+            <a href="#smartflow" class="btn btn-secondary">SmartFlow ansehen</a>
+          </div>
+
+          <div class="hero-points">
+            <span>Modern & klar</span>
+            <span>Mobil optimiert</span>
+            <span>Einfach verständlich</span>
+            <span>Auf Anfragen ausgerichtet</span>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="mini-card">
+            <h3>Einfach statt kompliziert</h3>
+            <p>Keine unnötigen Systeme, kein Technik-Chaos – nur das, was ein Betrieb wirklich braucht.</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Mehr aus Anfragen machen</h3>
+            <p>Eine gute Website sieht nicht nur besser aus – sie führt Besucher klar zur Anfrage.</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Optional mit SmartFlow</h3>
+            <p>Auf Wunsch wird ein System eingebaut, das automatisch auf jede Anfrage reagiert.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Viele Betriebe verlieren täglich Anfragen</h2>
+          <p>
+            Nicht weil sie schlechte Arbeit machen – sondern weil die Website unklar ist,
+            Anfragen zu spät beantwortet werden oder der nächste Schritt für Kunden nicht deutlich genug ist.
+          </p>
+        </div>
+
+        <div class="problem-box">
+          <div class="problem-grid">
+            <div class="problem-item">
+              <strong>Unklare Website</strong>
+              <span>Besucher verstehen nicht schnell genug, was angeboten wird und wie sie anfragen sollen.</span>
+            </div>
+
+            <div class="problem-item">
+              <strong>Zu späte Rückmeldung</strong>
+              <span>Kunden warten zu lange auf eine Antwort und melden sich im Zweifel beim nächsten Anbieter.</span>
+            </div>
+
+            <div class="problem-item">
+              <strong>Zu viel Text, zu wenig Führung</strong>
+              <span>Viele Seiten informieren, aber leiten den Besucher nicht klar zu einer Anfrage.</span>
+            </div>
+
+            <div class="problem-item">
+              <strong>Keine Struktur im Prozess</strong>
+              <span>Website und Anfrage laufen nebeneinander, statt zusammen für mehr Übersicht zu sorgen.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Was wir anbieten</h2>
+          <p>
+            Klar, einfach und auf Betriebe ausgerichtet, die online besser auftreten und Anfragen sauber abwickeln wollen.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Website Erstellung</h3>
+            <p>
+              Moderne Websites für lokale Betriebe – klar aufgebaut, mobil optimiert und darauf ausgelegt,
+              Anfragen einfacher zu machen.
+            </p>
+
+            <ul class="service-list">
+              <li>Übersichtliche Startseite</li>
+              <li>Leistungen klar dargestellt</li>
+              <li>Kontakt & Anfrage im Fokus</li>
+              <li>Saubere mobile Darstellung</li>
+              <li>Kein unnötiger Technik-Ballast</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3>Automatische Anfragebearbeitung</h3>
+            <p>
+              Auf Wunsch integrieren wir ein System, das automatisch auf neue Anfragen reagiert
+              und so verhindert, dass Interessenten verloren gehen.
+            </p>
+
+            <ul class="service-list">
+              <li>Sofortige Reaktion auf Anfragen</li>
+              <li>Kein Lead geht unnötig verloren</li>
+              <li>Sauberer Ablauf im Hintergrund</li>
+              <li>Einfach statt kompliziert</li>
+              <li>Ideal als Ergänzung zur Website</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>So läuft es ab</h2>
+          <p>
+            Einfacher Ablauf, klare Schritte und keine unnötigen Schleifen.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Anfrage</h3>
+            <p>Du stellst eine Anfrage und schilderst kurz, was du brauchst.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Abstimmung</h3>
+            <p>Wir klären gemeinsam die wichtigsten Punkte und den passenden Umfang.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Umsetzung</h3>
+            <p>Die Website wird sauber aufgebaut und auf deinen Betrieb zugeschnitten.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Livegang</h3>
+            <p>Die Seite geht online und kann auf Wunsch direkt mit SmartFlow erweitert werden.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Für wen das gedacht ist</h2>
+          <p>
+            Vor allem für lokale Betriebe, die online professioneller auftreten und Anfragen besser nutzen wollen.
+          </p>
+        </div>
+
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h3>Handwerker</h3>
+            <p>Klare Website, schneller Kontakt und weniger unnötige Hürden für Interessenten.</p>
+          </div>
+
+          <div class="audience-card">
+            <h3>Dienstleister</h3>
+            <p>Einfacher Online-Auftritt, der Leistungen verständlich macht und Vertrauen aufbaut.</p>
+          </div>
+
+          <div class="audience-card">
+            <h3>Kleine Unternehmen</h3>
+            <p>Weniger Technik-Chaos, mehr Klarheit und ein sauberer Weg zur Anfrage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="smartflow" class="section">
+      <div class="container">
+        <div class="smartflow-box">
+          <div>
+            <div class="badge">Optionales Zusatzsystem</div>
+            <h2>SmartFlow</h2>
+            <p>
+              Neben der Website kann auf Wunsch ein System integriert werden, das automatisch
+              auf Kundenanfragen reagiert und so dafür sorgt, dass keine Anfrage untergeht.
+            </p>
+            <a href="https://smartflow-automations.de" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              SmartFlow ansehen
+            </a>
+          </div>
+
+          <div class="smartflow-note">
+            <strong>Der Vorteil</strong>
+            <span>
+              Die Website bringt Anfragen – SmartFlow sorgt dafür, dass diese Anfragen
+              direkt aufgefangen und bestätigt werden.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="section">
+      <div class="container contact-wrap">
+        <div class="contact-card">
+          <div class="badge">Kontakt</div>
+          <h2>Anfrage stellen</h2>
+          <p>
+            Stell einfach eine unverbindliche Anfrage. Wir melden uns innerhalb von 24 Stunden zurück.
+          </p>
+
+          <div class="contact-list">
+            <div>📧 E-Mail: deine@email.de</div>
+            <div>📞 Telefon: deine Nummer</div>
+            <div>📍 Standort: Deutschland</div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2>Website anfragen</h2>
+          <p>
+            Kurz ausfüllen und angeben, was benötigt wird.
+          </p>
+
+          <form>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Firma" />
+            <input type="email" placeholder="E-Mail" />
+            <input type="tel" placeholder="Telefon" />
+            <select>
+              <option>Was wird benötigt?</option>
+              <option>Neue Website</option>
+              <option>Bestehende Website überarbeiten</option>
+              <option>Beratung</option>
+              <option>Website + SmartFlow</option>
+            </select>
+            <textarea placeholder="Beschreibe kurz, was du brauchst"></textarea>
+            <button type="submit" class="btn btn-primary">Anfrage senden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Hodzic Digital Services</div>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
