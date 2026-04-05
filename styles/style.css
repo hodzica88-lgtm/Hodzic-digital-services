@@ -1,19 +1,23 @@
 :root {
-  --bg: #070709;
-  --bg-soft: #0f1014;
-  --card: rgba(255, 255, 255, 0.04);
-  --card-strong: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.10);
-  --text: #f7f7fb;
-  --muted: #b8bac6;
+  --bg: #06111f;
+  --bg-2: #0a1830;
+  --bg-3: #0f2142;
+  --card: rgba(10, 22, 45, 0.72);
+  --card-2: rgba(15, 30, 60, 0.82);
+  --border: rgba(108, 163, 255, 0.22);
+  --text: #f5f9ff;
+  --muted: #a9b9d6;
   --white: #ffffff;
-  --dark: #111111;
-  --accent: #d9dbe7;
+  --dark: #07111f;
+  --primary: #63a4ff;
+  --primary-2: #3d8bff;
+  --primary-3: #1e6dff;
+  --glow: rgba(76, 141, 255, 0.28);
   --max-width: 1180px;
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
   --section-space: 110px;
 }
 
@@ -31,9 +35,10 @@ body {
   color: var(--text);
   line-height: 1.6;
   background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.10), transparent 22%),
-    radial-gradient(circle at top right, rgba(255,255,255,0.06), transparent 24%),
-    linear-gradient(180deg, #060607 0%, #0d0e12 45%, #111218 100%);
+    radial-gradient(circle at 10% 0%, rgba(82, 143, 255, 0.22), transparent 26%),
+    radial-gradient(circle at 90% 10%, rgba(80, 149, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 50% 30%, rgba(26, 96, 255, 0.10), transparent 38%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
 }
 
 a {
@@ -78,13 +83,14 @@ a {
   gap: 8px;
   padding: 10px 15px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.03);
-  color: var(--muted);
+  border: 1px solid rgba(121, 171, 255, 0.25);
+  background: rgba(83, 132, 255, 0.08);
+  color: #c9dcff;
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
 }
 
 .nav-wrap {
@@ -92,8 +98,8 @@ a {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(18px);
-  background: rgba(8, 8, 10, 0.72);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(7, 17, 31, 0.68);
+  border-bottom: 1px solid rgba(106, 156, 255, 0.10);
 }
 
 .nav {
@@ -132,12 +138,12 @@ a {
   justify-content: center;
   padding: 12px 20px;
   border-radius: 999px;
-  background: var(--white);
-  color: var(--dark);
+  background: linear-gradient(135deg, var(--primary), var(--primary-3));
+  color: var(--white);
   font-weight: 700;
   font-size: 14px;
-  box-shadow: 0 10px 30px rgba(255,255,255,0.10);
   white-space: nowrap;
+  box-shadow: 0 14px 34px rgba(49, 111, 255, 0.28);
 }
 
 .hero {
@@ -159,8 +165,10 @@ a {
 .step,
 .contact-list div {
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+  background:
+    linear-gradient(180deg, rgba(25, 47, 89, 0.72), rgba(9, 20, 40, 0.78));
   box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
 }
 
 .hero-left,
@@ -181,10 +189,24 @@ a {
 .hero-left::before {
   content: "";
   position: absolute;
-  inset: auto -10% -30% auto;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(255,255,255,0.10), transparent 65%);
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  bottom: -120px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(83, 153, 255, 0.24), transparent 68%);
+  pointer-events: none;
+}
+
+.hero-left::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  left: -80px;
+  top: -70px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(93, 178, 255, 0.14), transparent 70%);
   pointer-events: none;
 }
 
@@ -200,7 +222,6 @@ a {
   line-height: 0.98;
   letter-spacing: -2px;
   margin: 20px 0 22px;
-  max-width: 900px;
 }
 
 .hero-lead {
@@ -231,9 +252,9 @@ a {
 }
 
 .btn-primary {
-  background: var(--white);
-  color: var(--dark);
-  box-shadow: 0 12px 30px rgba(255,255,255,0.10);
+  background: linear-gradient(135deg, var(--primary), var(--primary-3));
+  color: var(--white);
+  box-shadow: 0 16px 36px rgba(49, 111, 255, 0.28);
 }
 
 .btn-primary:hover {
@@ -242,13 +263,13 @@ a {
 }
 
 .btn-secondary {
-  border-color: rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.02);
+  border-color: rgba(108, 163, 255, 0.26);
+  background: rgba(100, 149, 255, 0.08);
   color: var(--white);
 }
 
 .btn-secondary:hover {
-  border-color: rgba(255,255,255,0.28);
+  border-color: rgba(131, 178, 255, 0.48);
   transform: translateY(-1px);
 }
 
@@ -261,9 +282,9 @@ a {
 .hero-points span {
   padding: 10px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.03);
-  color: var(--muted);
+  border: 1px solid rgba(121, 171, 255, 0.18);
+  background: rgba(89, 138, 255, 0.08);
+  color: #d7e7ff;
   font-size: 13px;
 }
 
@@ -344,14 +365,14 @@ a {
   width: 42px;
   height: 42px;
   border-radius: 999px;
-  background: var(--white);
-  color: var(--dark);
+  background: linear-gradient(135deg, #8ec0ff, #4b8cff);
+  color: var(--white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   margin: 0 auto 16px;
-  box-shadow: 0 12px 25px rgba(255,255,255,0.12);
+  box-shadow: 0 12px 25px rgba(74, 126, 255, 0.28);
 }
 
 .contact-list {
@@ -371,13 +392,18 @@ textarea {
   width: 100%;
   min-height: 140px;
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(121, 171, 255, 0.22);
+  background: rgba(15, 31, 61, 0.72);
   color: var(--white);
   padding: 18px;
   font: inherit;
   outline: none;
   resize: vertical;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+textarea::placeholder {
+  color: #91a8cd;
 }
 
 .footer-note {
