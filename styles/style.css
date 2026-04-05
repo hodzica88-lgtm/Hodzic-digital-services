@@ -1,19 +1,20 @@
 :root {
-  --bg: #0a0a0b;
-  --bg-soft: #111114;
+  --bg: #070709;
+  --bg-soft: #0f1014;
   --card: rgba(255, 255, 255, 0.04);
   --card-strong: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.08);
-  --text: #f5f5f7;
-  --muted: #b6b6bf;
+  --border: rgba(255, 255, 255, 0.10);
+  --text: #f7f7fb;
+  --muted: #b8bac6;
   --white: #ffffff;
   --dark: #111111;
+  --accent: #d9dbe7;
   --max-width: 1180px;
-  --radius-xl: 28px;
+  --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
-  --section-space: 100px;
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  --section-space: 110px;
 }
 
 * {
@@ -28,11 +29,11 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: var(--text);
-  line-height: 1.55;
+  line-height: 1.6;
   background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 28%),
-    radial-gradient(circle at top right, rgba(255,255,255,0.04), transparent 25%),
-    linear-gradient(180deg, #09090a 0%, #111113 100%);
+    radial-gradient(circle at top left, rgba(255,255,255,0.10), transparent 22%),
+    radial-gradient(circle at top right, rgba(255,255,255,0.06), transparent 24%),
+    linear-gradient(180deg, #060607 0%, #0d0e12 45%, #111218 100%);
 }
 
 a {
@@ -44,7 +45,7 @@ a {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .section {
@@ -54,47 +55,49 @@ a {
 .section-title {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 46px;
+  margin: 0 auto 52px;
 }
 
 .section-title h1,
 .section-title h2 {
-  margin: 0 0 16px;
-  font-size: clamp(32px, 4vw, 52px);
-  line-height: 1.08;
+  margin: 0 0 18px;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -1px;
 }
 
 .section-title p {
   margin: 0;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
+  padding: 10px 15px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.03);
   color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 0.8px;
+  font-size: 12px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  backdrop-filter: blur(10px);
 }
 
 .nav-wrap {
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(14px);
-  background: rgba(10, 10, 11, 0.72);
+  backdrop-filter: blur(18px);
+  background: rgba(8, 8, 10, 0.72);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .nav {
-  min-height: 76px;
+  min-height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,7 +112,7 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 22px;
   flex-wrap: wrap;
 }
 
@@ -127,23 +130,24 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 18px;
+  padding: 12px 20px;
   border-radius: 999px;
   background: var(--white);
   color: var(--dark);
   font-weight: 700;
   font-size: 14px;
+  box-shadow: 0 10px 30px rgba(255,255,255,0.10);
   white-space: nowrap;
 }
 
 .hero {
-  padding: 72px 0 50px;
+  padding: 86px 0 56px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 26px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
   align-items: stretch;
 }
 
@@ -152,9 +156,10 @@ a {
 .info-card,
 .problem-item,
 .service-card,
-.step {
+.step,
+.contact-list div {
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
   box-shadow: var(--shadow);
 }
 
@@ -164,11 +169,23 @@ a {
 }
 
 .hero-left {
-  padding: 38px;
+  padding: 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 560px;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left::before {
+  content: "";
+  position: absolute;
+  inset: auto -10% -30% auto;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255,255,255,0.10), transparent 65%);
+  pointer-events: none;
 }
 
 .hero-right {
@@ -179,24 +196,25 @@ a {
 }
 
 .hero h1 {
-  font-size: clamp(42px, 6vw, 74px);
-  line-height: 1.02;
-  letter-spacing: -1.5px;
-  margin: 18px 0 20px;
+  font-size: clamp(46px, 6vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -2px;
+  margin: 20px 0 22px;
+  max-width: 900px;
 }
 
 .hero-lead {
-  font-size: 19px;
+  font-size: 20px;
   color: var(--muted);
   max-width: 760px;
-  margin: 0 0 28px;
+  margin: 0 0 30px;
 }
 
 .hero-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .btn {
@@ -215,21 +233,22 @@ a {
 .btn-primary {
   background: var(--white);
   color: var(--dark);
+  box-shadow: 0 12px 30px rgba(255,255,255,0.10);
 }
 
 .btn-primary:hover {
-  opacity: 0.95;
+  opacity: 0.96;
   transform: translateY(-1px);
 }
 
 .btn-secondary {
-  border-color: rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.02);
   color: var(--white);
 }
 
 .btn-secondary:hover {
-  border-color: rgba(255,255,255,0.24);
+  border-color: rgba(255,255,255,0.28);
   transform: translateY(-1px);
 }
 
@@ -250,12 +269,12 @@ a {
 
 .info-card {
   border-radius: var(--radius-lg);
-  padding: 22px;
+  padding: 24px;
 }
 
 .info-card h3 {
   margin: 0 0 10px;
-  font-size: 19px;
+  font-size: 20px;
 }
 
 .info-card p {
@@ -268,7 +287,7 @@ a {
 .services-grid,
 .steps {
   display: grid;
-  gap: 18px;
+  gap: 20px;
 }
 
 .problem-grid,
@@ -282,13 +301,13 @@ a {
 
 .problem-item {
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 24px;
 }
 
 .problem-item strong {
   display: block;
-  margin-bottom: 8px;
-  font-size: 17px;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .problem-item span {
@@ -298,12 +317,13 @@ a {
 
 .service-card {
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 30px;
+  text-align: left;
 }
 
 .service-card h3 {
   margin: 0 0 12px;
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .service-card p {
@@ -314,15 +334,15 @@ a {
 
 .step {
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 28px 22px;
   text-align: center;
   font-size: 18px;
   font-weight: 600;
 }
 
 .step-number {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 999px;
   background: var(--white);
   color: var(--dark);
@@ -331,6 +351,7 @@ a {
   justify-content: center;
   font-weight: 700;
   margin: 0 auto 16px;
+  box-shadow: 0 12px 25px rgba(255,255,255,0.12);
 }
 
 .contact-list {
@@ -341,11 +362,29 @@ a {
 
 .contact-list div {
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.03);
-  padding: 15px 16px;
-  color: #e7e7ed;
+  padding: 16px 18px;
+  color: #ececf3;
   font-size: 15px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 140px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  color: var(--white);
+  padding: 18px;
+  font: inherit;
+  outline: none;
+  resize: vertical;
+}
+
+.footer-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 24px 0 50px;
 }
 
 @media (max-width: 980px) {
@@ -387,5 +426,9 @@ a {
 
   .section {
     padding: 78px 0;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
   }
 }
