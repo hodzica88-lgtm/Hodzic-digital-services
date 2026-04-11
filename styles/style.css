@@ -1102,3 +1102,43 @@ ul {
         gap: 10px;
     }
 }
+.projects {
+padding:80px 20px;
+text-align:center;
+background:#f7f7f7;
+}
+
+.projects h2 {
+margin-bottom:30px;
+font-size:28px;
+}
+
+.projects-grid {
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+max-width:600px;
+margin:auto;
+}
+
+.projects a {
+display:block;
+background:#fff;
+padding:20px;
+border-radius:12px;
+text-decoration:none;
+color:#000;
+font-weight:600;
+transition:0.2s;
+}
+
+.projects a:hover {
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+@media(max-width:600px){
+.projects-grid {
+grid-template-columns:1fr;
+}
+}
