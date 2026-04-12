@@ -4,189 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontakt – Hodzic Digital Services</title>
-  <meta
-    name="description"
-    content="Kontakt zu Hodzic Digital Services – Premium Webseiten für lokale Businesses."
-  />
+  <meta name="description" content="Kontakt zu Hodzic Digital Services." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/style.css?v=final-agency-1" />
 </head>
 <body>
-  <div class="page-glow"></div>
+  <div class="top-strip">Projektanfrage</div>
 
   <header class="site-header">
     <div class="container header-row">
-      <a href="index.html" class="brand" aria-label="Hodzic Digital Services Startseite">
-        <span class="brand-logo-wrap">
-          <img src="images/logo.png" alt="Hodzic Digital Services Logo" class="brand-logo" />
-        </span>
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Hodzic Digital Services Logo" class="brand-logo">
       </a>
 
-      <nav class="main-nav" aria-label="Hauptnavigation">
+      <nav class="main-nav">
         <a href="index.html">Start</a>
         <a href="about.html">Über mich</a>
         <a href="contact.html" class="is-active">Kontakt</a>
       </nav>
 
-      <a href="contact.html" class="btn btn-primary">Projekt anfragen</a>
+      <a href="contact.html" class="btn btn-gold">Projekt anfragen</a>
     </div>
   </header>
 
   <main>
-    <section class="subhero-section">
-      <div class="container subhero-grid">
-        <div class="subhero-copy">
-          <span class="eyebrow">Kontakt & Anfrage</span>
-          <h1>Der beste erste Schritt ist eine saubere, strukturierte Anfrage.</h1>
-          <p class="subhero-lead">
-            Statt unklarer Nachrichten oder spontaner Anrufe läuft der Kontakt bewusst schriftlich.
-            So können neue Projekte und laufende Änderungen sauber eingeordnet,
-            effizient bearbeitet und professionell beantwortet werden.
+    <section class="subpage-hero">
+      <div class="container subpage-grid">
+        <div>
+          <span class="eyebrow">Kontakt</span>
+          <h1>Sauber anfragen. Klar starten.</h1>
+          <p class="hero-text">
+            Wenn du eine moderne, hochwertige Website willst, beschreibe kurz dein Projekt.
+            So lässt sich direkt sinnvoll einordnen, was gebraucht wird.
           </p>
         </div>
 
-        <div class="subhero-panel">
-          <span class="hero-badge">Bevorzugter Weg</span>
-          <h3>Formular statt Telefon.</h3>
-          <p>
-            So liegen alle wichtigen Infos direkt schriftlich vor und dein Anliegen
-            kann deutlich besser eingeordnet werden.
-          </p>
+        <div class="subpage-panel">
+          <span class="panel-badge">Kontakt</span>
+          <h3>Schriftlich ist am effizientesten.</h3>
+          <p>So liegen alle wichtigen Infos direkt vor und Projekte können sauber eingeordnet werden.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container contact-layout">
-        <div class="stack-column">
+    <section class="content-section">
+      <div class="container split-grid">
+        <div class="stack-grid single">
           <div class="info-card">
-            <strong>Alternative per E-Mail</strong>
+            <strong>E-Mail</strong>
             <p><a href="mailto:info@smartflow-automations.de">info@smartflow-automations.de</a></p>
           </div>
-
           <div class="info-card">
-            <strong>Warum der Ablauf so ist</strong>
-            <p>Weniger Chaos. Bessere Einordnung. Professionellerer Prozess.</p>
+            <strong>Für wen</strong>
+            <p>Für Unternehmen, Selbstständige und lokale Businesses, die professioneller auftreten wollen.</p>
           </div>
-
           <div class="info-card">
-            <strong>Für neue Projekte</strong>
-            <p>Neue Website, Überarbeitung, Landingpage oder ein insgesamt stärkerer digitaler Auftritt.</p>
-          </div>
-
-          <div class="info-card">
-            <strong>Für bestehende Kunden</strong>
-            <p>Textänderungen, neue Inhalte, Designanpassungen oder rechtliche/formale Änderungen.</p>
+            <strong>Worum es gehen kann</strong>
+            <p>Neue Website, Redesign, Landingpage oder ein insgesamt stärkerer Außenauftritt.</p>
           </div>
         </div>
 
         <form
-          class="contact-form form-card"
+          class="contact-form-card"
           name="projektanfrage"
           method="POST"
           data-netlify="true"
           action="/thank-you.html"
         >
-          <input type="hidden" name="form-name" value="projektanfrage" />
+          <input type="hidden" name="form-name" value="projektanfrage">
 
           <label>
-            <span>Name / Ansprechpartner</span>
-            <input type="text" name="name" placeholder="Dein Name" required />
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Dein Name" required>
           </label>
 
           <label>
             <span>Unternehmen</span>
-            <input type="text" name="company" placeholder="Unternehmen oder Marke" />
+            <input type="text" name="company" placeholder="Unternehmen oder Marke">
           </label>
 
           <label>
             <span>E-Mail</span>
-            <input type="email" name="email" placeholder="deine@email.de" required />
+            <input type="email" name="email" placeholder="deine@email.de" required>
           </label>
 
           <label>
-            <span>Aktuelle Website (falls vorhanden)</span>
-            <input type="text" name="website" placeholder="https://..." />
+            <span>Website</span>
+            <input type="text" name="website" placeholder="https://...">
           </label>
 
           <label>
-            <span>Worum geht es konkret?</span>
-            <select name="type" required>
-              <option value="">Bitte auswählen</option>
-              <option>Neue Website</option>
-              <option>Überarbeitung einer bestehenden Website</option>
-              <option>Landingpage / einzelne Seite</option>
-              <option>Allgemeine Anfrage</option>
-            </select>
+            <span>Nachricht</span>
+            <textarea name="message" rows="7" placeholder="Worum geht es?" required></textarea>
           </label>
 
-          <label>
-            <span>Projektbeschreibung</span>
-            <textarea name="message" rows="7" placeholder="Beschreibe kurz, worum es geht." required></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary btn-large btn-full">Projektanfrage senden</button>
+          <button type="submit" class="btn btn-gold btn-large btn-full">Anfrage senden</button>
         </form>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Vorteil dieses Ablaufs</span>
-          <h2>Weniger Chaos. Bessere Einordnung. Professionellerer Prozess.</h2>
-        </div>
-
-        <div class="three-grid">
-          <div class="service-card">
-            <div class="service-number">01</div>
-            <h3>Sauberer Start</h3>
-            <p>Eine strukturierte Anfrage spart Zeit und sorgt dafür, dass wichtige Informationen sofort vorhanden sind.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-number">02</div>
-            <h3>Bessere Einordnung</h3>
-            <p>Neue Projekte und laufende Änderungen brauchen unterschiedliche Informationen.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-number">03</div>
-            <h3>Professionellerer Prozess</h3>
-            <p>Ein schriftlicher Ablauf wirkt nicht nur ordentlicher, sondern ist bei Webprojekten auch inhaltlich sinnvoller.</p>
-          </div>
-        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="index.html" class="brand footer-brand">
-          <span class="brand-logo-wrap footer-logo-wrap">
-            <img src="images/logo.png" alt="Hodzic Digital Services Logo" class="brand-logo" />
-          </span>
-        </a>
-        <p class="footer-copy">
-          Moderne Websites, digitale Services und ein professioneller Außenauftritt für Unternehmen, Selbstständige und lokale Betriebe.
-        </p>
+    <div class="container footer-row">
+      <div class="footer-brand-wrap">
+        <img src="images/logo.png" alt="Hodzic Digital Services Logo" class="footer-logo">
+        <p class="footer-copy">Premium Webseiten für lokale Businesses.</p>
       </div>
 
       <div class="footer-links">
-        <strong>Navigation</strong>
-        <a href="index.html">Start</a>
         <a href="about.html">Über mich</a>
         <a href="contact.html">Kontakt</a>
-      </div>
-
-      <div class="footer-links">
-        <strong>Rechtliches</strong>
+        <a href="agb.html">AGB</a>
         <a href="impressum.html">Impressum</a>
         <a href="privacy.html">Datenschutz</a>
       </div>
