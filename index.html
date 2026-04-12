@@ -14,86 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles/style.css?v=final-index-3" />
-
-  <style>
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .project-card {
-      display: block;
-      background: var(--surface, #111111);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-      transition: transform 220ms ease, border-color 220ms ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(201, 169, 110, 0.28);
-    }
-
-    .project-slider {
-      position: relative;
-      width: 100%;
-      height: 240px;
-      background: #111111;
-      overflow: hidden;
-    }
-
-    .project-slide-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    .project-content {
-      padding: 18px;
-    }
-
-    .project-tag {
-      display: inline-flex;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(201, 169, 110, 0.12);
-      color: #c9a96e;
-      font-size: 0.74rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .project-content h3 {
-      margin: 14px 0 8px;
-    }
-
-    .project-content p {
-      color: var(--text-soft, #bfbfbf);
-    }
-
-    @media (max-width: 1100px) {
-      .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 780px) {
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-slider {
-        height: 220px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles/style.css?v=final-index-4" />
 </head>
 <body>
   <div class="top-strip">Premium Webdesign für lokale Businesses</div>
@@ -173,7 +94,7 @@
 
         <div class="project-grid">
           <a href="https://hodzica88-lgtm.github.io/Beauty-demo-Instagram-/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider" data-images="images/projects/beauty-1.png,images/projects/beauty-2.png">
+            <div class="project-slider">
               <img src="images/projects/beauty-1.png" alt="Beauty Demo Screenshot" class="project-slide-img">
             </div>
             <div class="project-content">
@@ -184,7 +105,7 @@
           </a>
 
           <a href="https://hodzica88-lgtm.github.io/Friseur-demo-Insagram/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider" data-images="images/projects/friseur-1.png,images/projects/friseur-2.png">
+            <div class="project-slider">
               <img src="images/projects/friseur-1.png" alt="Friseur Demo Screenshot" class="project-slide-img">
             </div>
             <div class="project-content">
@@ -195,7 +116,7 @@
           </a>
 
           <a href="https://hodzica88-lgtm.github.io/Barber-demo-Instagram-/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider" data-images="images/projects/barber-1.png,images/projects/barber-2.png,images/projects/barber-3.png">
+            <div class="project-slider">
               <img src="images/projects/barber-1.png" alt="Barber Demo Screenshot" class="project-slide-img">
             </div>
             <div class="project-content">
@@ -206,7 +127,7 @@
           </a>
 
           <a href="https://hodzica88-lgtm.github.io/Coach-demo-Instagram/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider" data-images="images/projects/fitness-1.png,images/projects/fitness-2.png,images/projects/fitness-3.png">
+            <div class="project-slider">
               <img src="images/projects/fitness-1.png" alt="Fitness Coach Demo Screenshot" class="project-slide-img">
             </div>
             <div class="project-content">
@@ -217,7 +138,7 @@
           </a>
 
           <a href="https://hodzica88-lgtm.github.io/Handwerker-Demo-Instagram-/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider" data-images="images/projects/handwerker-1.png,images/projects/handwerker-2.png">
+            <div class="project-slider">
               <img src="images/projects/handwerker-1.png" alt="Handwerker Demo Screenshot" class="project-slide-img">
             </div>
             <div class="project-content">
@@ -300,20 +221,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    document.querySelectorAll('.project-slider').forEach((slider) => {
-      const images = slider.dataset.images.split(',');
-      const img = slider.querySelector('.project-slide-img');
-      let index = 0;
-
-      if (!img || images.length <= 1) return;
-
-      setInterval(() => {
-        index = (index + 1) % images.length;
-        img.src = images[index];
-      }, 2600);
-    });
-  </script>
 </body>
 </html>
