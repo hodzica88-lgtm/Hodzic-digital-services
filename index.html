@@ -1,9 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hodzic Digital Services – Webseiten, die verkaufen</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="#" class="brand">
+      <img src="images/logo.png" alt="Logo" style="height:40px;">
+    </a>
+
+    <nav class="main-nav">
+      <a href="#">Start</a>
+      <a href="#projekte">Projekte</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+
+    <a href="contact.html" class="btn btn-primary">Projekt anfragen</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="container hero-grid">
+
+    <div>
+      <h1>Websites, die verkaufen.</h1>
+      <p class="hero-text">
+        Modern. Schnell. Für dein Business.
+      </p>
+
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">Projekt starten</a>
+        <a href="#projekte" class="btn btn-secondary">Projekte ansehen</a>
+      </div>
+    </div>
+
+    <div class="hero-image-card"></div>
+
+  </div>
+</section>
+
+<!-- PROJEKTE -->
 <section class="section" id="projekte">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Demo Projekte</span>
-      <h2>Beispiele, die direkt überzeugen.</h2>
-    </div>
+
+    <h2>Demo Projekte</h2>
 
     <div class="project-grid">
 
@@ -12,7 +64,6 @@
         <div class="slider" data-images="images/projects/barber-1.png,images/projects/barber-2.png,images/projects/barber-3.png"></div>
         <div class="project-info">
           <h3>Barber</h3>
-          <p>Dunkel. Maskulin. Premium.</p>
         </div>
       </a>
 
@@ -21,7 +72,6 @@
         <div class="slider" data-images="images/projects/beauty-1.png,images/projects/beauty-2.png"></div>
         <div class="project-info">
           <h3>Beauty</h3>
-          <p>Clean. Elegant. Hochwertig.</p>
         </div>
       </a>
 
@@ -30,7 +80,6 @@
         <div class="slider" data-images="images/projects/fitness-1.png,images/projects/fitness-2.png,images/projects/fitness-3.png"></div>
         <div class="project-info">
           <h3>Fitness Coach</h3>
-          <p>Performance. Stärke. Fokus.</p>
         </div>
       </a>
 
@@ -39,7 +88,6 @@
         <div class="slider" data-images="images/projects/friseur-1.png,images/projects/friseur-2.png"></div>
         <div class="project-info">
           <h3>Friseur</h3>
-          <p>Modern. Stilvoll. Klar.</p>
         </div>
       </a>
 
@@ -48,10 +96,35 @@
         <div class="slider" data-images="images/projects/handwerker-1.png,images/projects/handwerker-2.png"></div>
         <div class="project-info">
           <h3>Handwerk</h3>
-          <p>Stark. Klar. Vertrauenswürdig.</p>
         </div>
       </a>
 
     </div>
   </div>
 </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p>© Hodzic Digital Services</p>
+  </div>
+</footer>
+
+<!-- SLIDER SCRIPT -->
+<script>
+document.querySelectorAll('.slider').forEach(slider => {
+  const images = slider.dataset.images.split(',');
+  let index = 0;
+
+  slider.style.backgroundImage = `url(${images[index]})`;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    slider.style.backgroundImage = `url(${images[index]})`;
+  }, 2500);
+});
+</script>
+
+</body>
+</html>
