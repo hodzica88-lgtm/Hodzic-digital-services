@@ -14,26 +14,26 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles/style.css?v=final-index-4" />
+  <link rel="stylesheet" href="/styles/style.css?v=final-index-5" />
 </head>
 <body>
   <div class="top-strip">Premium Webdesign für lokale Businesses</div>
 
   <header class="site-header">
     <div class="container header-row">
-      <a href="index.html" class="brand" aria-label="Hodzic Digital Services Startseite">
-        <img src="images/logo.png" alt="Hodzic Digital Services Logo" class="brand-logo">
+      <a href="/index.html" class="brand" aria-label="Hodzic Digital Services Startseite">
+        <img src="/images/logo.png" alt="Hodzic Digital Services Logo" class="brand-logo">
       </a>
 
       <nav class="main-nav" aria-label="Hauptnavigation">
-        <a href="index.html" class="is-active">Start</a>
+        <a href="/index.html" class="is-active">Start</a>
         <a href="#projekte">Projekte</a>
         <a href="#leistungen">Leistungen</a>
-        <a href="about.html">Über mich</a>
-        <a href="contact.html">Kontakt</a>
+        <a href="/about.html">Über mich</a>
+        <a href="/contact.html">Kontakt</a>
       </nav>
 
-      <a href="contact.html" class="btn btn-gold">Projekt anfragen</a>
+      <a href="/contact.html" class="btn btn-gold">Projekt anfragen</a>
     </div>
   </header>
 
@@ -49,7 +49,7 @@
           </p>
 
           <div class="hero-actions">
-            <a href="contact.html" class="btn btn-gold btn-large">Projekt starten</a>
+            <a href="/contact.html" class="btn btn-gold btn-large">Projekt starten</a>
             <a href="#projekte" class="btn btn-outline btn-large">Projekte ansehen</a>
           </div>
 
@@ -84,7 +84,7 @@
       </div>
     </section>
 
-    <section class="projects-section" id="projekte">
+    <section class="projects-section" id="projekte" style="padding:0 0 100px;">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Demo Projekte</span>
@@ -92,59 +92,140 @@
           <p>Jede Karte zeigt echte Screenshots deiner Demo-Seiten.</p>
         </div>
 
-        <div class="project-grid">
-          <a href="https://hodzica88-lgtm.github.io/Beauty-demo-Instagram-/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider">
-              <img src="images/projects/beauty-1.png" alt="Beauty Demo Screenshot" class="project-slide-img">
+        <div
+          style="
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            gap:20px;
+          "
+        >
+          <a
+            href="https://hodzica88-lgtm.github.io/Beauty-demo-Instagram-/"
+            target="_blank"
+            rel="noopener"
+            style="
+              display:block;
+              background:#111111;
+              border:1px solid rgba(255,255,255,0.08);
+              border-radius:28px;
+              overflow:hidden;
+              box-shadow:0 24px 60px rgba(0,0,0,0.35);
+              color:#ffffff;
+              text-decoration:none;
+            "
+            class="project-card-link"
+          >
+            <div class="project-slider" data-images="/images/projects/beauty-1.png,/images/projects/beauty-2.png" style="height:240px;background:#111;">
+              <img src="/images/projects/beauty-1.png" alt="Beauty Demo Screenshot" class="project-slide-img" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;">
             </div>
-            <div class="project-content">
-              <span class="project-tag">Beauty</span>
-              <h3>Beauty Studio</h3>
-              <p>Clean. Elegant. Hochwertig.</p>
-            </div>
-          </a>
-
-          <a href="https://hodzica88-lgtm.github.io/Friseur-demo-Insagram/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider">
-              <img src="images/projects/friseur-1.png" alt="Friseur Demo Screenshot" class="project-slide-img">
-            </div>
-            <div class="project-content">
-              <span class="project-tag">Friseur</span>
-              <h3>Friseur</h3>
-              <p>Modern. Stilvoll. Klar.</p>
-            </div>
-          </a>
-
-          <a href="https://hodzica88-lgtm.github.io/Barber-demo-Instagram-/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider">
-              <img src="images/projects/barber-1.png" alt="Barber Demo Screenshot" class="project-slide-img">
-            </div>
-            <div class="project-content">
-              <span class="project-tag">Barber</span>
-              <h3>Barber</h3>
-              <p>Dunkel. Maskulin. Premium.</p>
-            </div>
-          </a>
-
-          <a href="https://hodzica88-lgtm.github.io/Coach-demo-Instagram/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider">
-              <img src="images/projects/fitness-1.png" alt="Fitness Coach Demo Screenshot" class="project-slide-img">
-            </div>
-            <div class="project-content">
-              <span class="project-tag">Fitness Coach</span>
-              <h3>Fitness Coach</h3>
-              <p>Performance. Stärke. Fokus.</p>
+            <div style="padding:18px;">
+              <span style="display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(201,169,110,0.12);color:#c9a96e;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">Beauty</span>
+              <h3 style="margin:14px 0 8px;">Beauty Studio</h3>
+              <p style="color:#bfbfbf;">Clean. Elegant. Hochwertig.</p>
             </div>
           </a>
 
-          <a href="https://hodzica88-lgtm.github.io/Handwerker-Demo-Instagram-/" target="_blank" rel="noopener" class="project-card">
-            <div class="project-slider">
-              <img src="images/projects/handwerker-1.png" alt="Handwerker Demo Screenshot" class="project-slide-img">
+          <a
+            href="https://hodzica88-lgtm.github.io/Friseur-demo-Insagram/"
+            target="_blank"
+            rel="noopener"
+            style="
+              display:block;
+              background:#111111;
+              border:1px solid rgba(255,255,255,0.08);
+              border-radius:28px;
+              overflow:hidden;
+              box-shadow:0 24px 60px rgba(0,0,0,0.35);
+              color:#ffffff;
+              text-decoration:none;
+            "
+            class="project-card-link"
+          >
+            <div class="project-slider" data-images="/images/projects/friseur-1.png,/images/projects/friseur-2.png" style="height:240px;background:#111;">
+              <img src="/images/projects/friseur-1.png" alt="Friseur Demo Screenshot" class="project-slide-img" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;">
             </div>
-            <div class="project-content">
-              <span class="project-tag">Handwerk</span>
-              <h3>Handwerker</h3>
-              <p>Stark. Klar. Vertrauenswürdig.</p>
+            <div style="padding:18px;">
+              <span style="display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(201,169,110,0.12);color:#c9a96e;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">Friseur</span>
+              <h3 style="margin:14px 0 8px;">Friseur</h3>
+              <p style="color:#bfbfbf;">Modern. Stilvoll. Klar.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://hodzica88-lgtm.github.io/Barber-demo-Instagram-/"
+            target="_blank"
+            rel="noopener"
+            style="
+              display:block;
+              background:#111111;
+              border:1px solid rgba(255,255,255,0.08);
+              border-radius:28px;
+              overflow:hidden;
+              box-shadow:0 24px 60px rgba(0,0,0,0.35);
+              color:#ffffff;
+              text-decoration:none;
+            "
+            class="project-card-link"
+          >
+            <div class="project-slider" data-images="/images/projects/barber-1.png,/images/projects/barber-2.png,/images/projects/barber-3.png" style="height:240px;background:#111;">
+              <img src="/images/projects/barber-1.png" alt="Barber Demo Screenshot" class="project-slide-img" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;">
+            </div>
+            <div style="padding:18px;">
+              <span style="display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(201,169,110,0.12);color:#c9a96e;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">Barber</span>
+              <h3 style="margin:14px 0 8px;">Barber</h3>
+              <p style="color:#bfbfbf;">Dunkel. Maskulin. Premium.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://hodzica88-lgtm.github.io/Coach-demo-Instagram/"
+            target="_blank"
+            rel="noopener"
+            style="
+              display:block;
+              background:#111111;
+              border:1px solid rgba(255,255,255,0.08);
+              border-radius:28px;
+              overflow:hidden;
+              box-shadow:0 24px 60px rgba(0,0,0,0.35);
+              color:#ffffff;
+              text-decoration:none;
+            "
+            class="project-card-link"
+          >
+            <div class="project-slider" data-images="/images/projects/fitness-1.png,/images/projects/fitness-2.png,/images/projects/fitness-3.png" style="height:240px;background:#111;">
+              <img src="/images/projects/fitness-1.png" alt="Fitness Coach Demo Screenshot" class="project-slide-img" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;">
+            </div>
+            <div style="padding:18px;">
+              <span style="display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(201,169,110,0.12);color:#c9a96e;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">Fitness Coach</span>
+              <h3 style="margin:14px 0 8px;">Fitness Coach</h3>
+              <p style="color:#bfbfbf;">Performance. Stärke. Fokus.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://hodzica88-lgtm.github.io/Handwerker-Demo-Instagram-/"
+            target="_blank"
+            rel="noopener"
+            style="
+              display:block;
+              background:#111111;
+              border:1px solid rgba(255,255,255,0.08);
+              border-radius:28px;
+              overflow:hidden;
+              box-shadow:0 24px 60px rgba(0,0,0,0.35);
+              color:#ffffff;
+              text-decoration:none;
+            "
+            class="project-card-link"
+          >
+            <div class="project-slider" data-images="/images/projects/handwerker-1.png,/images/projects/handwerker-2.png" style="height:240px;background:#111;">
+              <img src="/images/projects/handwerker-1.png" alt="Handwerker Demo Screenshot" class="project-slide-img" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;">
+            </div>
+            <div style="padding:18px;">
+              <span style="display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(201,169,110,0.12);color:#c9a96e;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">Handwerk</span>
+              <h3 style="margin:14px 0 8px;">Handwerker</h3>
+              <p style="color:#bfbfbf;">Stark. Klar. Vertrauenswürdig.</p>
             </div>
           </a>
         </div>
@@ -198,7 +279,7 @@
           </div>
 
           <div class="cta-actions">
-            <a href="contact.html" class="btn btn-gold btn-large">Jetzt Projekt anfragen</a>
+            <a href="/contact.html" class="btn btn-gold btn-large">Jetzt Projekt anfragen</a>
           </div>
         </div>
       </div>
@@ -208,18 +289,33 @@
   <footer class="site-footer">
     <div class="container footer-row">
       <div class="footer-brand-wrap">
-        <img src="images/logo.png" alt="Hodzic Digital Services Logo" class="footer-logo">
+        <img src="/images/logo.png" alt="Hodzic Digital Services Logo" class="footer-logo">
         <p class="footer-copy">Premium Webseiten für lokale Businesses.</p>
       </div>
 
       <div class="footer-links">
-        <a href="about.html">Über mich</a>
-        <a href="contact.html">Kontakt</a>
-        <a href="agb.html">AGB</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="privacy.html">Datenschutz</a>
+        <a href="/about.html">Über mich</a>
+        <a href="/contact.html">Kontakt</a>
+        <a href="/agb.html">AGB</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/privacy.html">Datenschutz</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.project-slider').forEach((slider) => {
+      const images = slider.dataset.images.split(',');
+      const img = slider.querySelector('.project-slide-img');
+      let index = 0;
+
+      if (!img || images.length <= 1) return;
+
+      setInterval(() => {
+        index = (index + 1) % images.length;
+        img.src = images[index].trim();
+      }, 2600);
+    });
+  </script>
 </body>
 </html>
