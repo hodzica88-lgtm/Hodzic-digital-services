@@ -613,3 +613,17 @@ h3 {
     padding: 28px;
   }
 }
+<script>
+  document.querySelectorAll('.project-media').forEach((media) => {
+    const images = media.dataset.images.split(',');
+    const img = media.querySelector('.project-slide-img');
+    let index = 0;
+
+    if (!img || images.length <= 1) return;
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      img.src = images[index];
+    }, 2600);
+  });
+</script>
